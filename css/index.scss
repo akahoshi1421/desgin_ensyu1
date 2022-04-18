@@ -1,0 +1,285 @@
+$black: black; 
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: a-otf-jun-pro, sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+}
+
+.loading{
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(250, 250, 146);
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    #loadlogo{
+        position: relative;
+        z-index: 1;
+        width: 50px;
+        height: 50px;
+        
+        &::after, &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            border: black solid 3px;
+            z-index: 2;
+        }
+        &::after{
+            transform: rotate(45deg);
+            animation: rotateanime2 1.5s ease infinite;
+        }    
+        &::before{
+            animation: rotateanime1 1.5s ease infinite;
+        }
+
+        #loadmsg{
+            position: absolute;
+            top: 110px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+}
+
+@keyframes rotateanime1 {
+    0%{
+        transform: rotate(0deg) scale(1);
+    }
+    50%{
+        transform: rotate(180deg) scale(2);
+    }
+    100%{
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes rotateanime2 {
+    0%{
+        transform: rotate(45deg) scale(1);
+    }
+    50%{
+        transform: rotate(225deg) scale(2);
+    }
+    100%{
+        transform: rotate(405deg) scale(1);
+    }
+}
+
+//こっから下はサイト本体
+
+header{
+    position: relative;
+    height: 65vh;
+    overflow: hidden;
+
+    .img{
+        position: absolute;
+        width: 75%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        transition: all 0.2s ease-in;
+        background: url("../img/nagoya_castle.jpg") no-repeat;
+        background-size: cover;
+        background-position: right;
+
+        &:hover{
+            filter: blur(4px);
+            transform: scale(1.15);
+        }
+    }
+
+    h1{
+        position: absolute;
+        top: 50%;
+        right: 10%;
+        font-size: 8vh;
+        color: white;
+        text-shadow: 2px 2px 6px black;
+        pointer-events: none;
+    }
+
+    .links{
+        position: absolute;
+        top: 3%;
+        left: 6%;
+        z-index: 3;
+
+        h3{
+            position: absolute;
+            left: -10%;
+            color: rgb(103, 100, 100);
+        }
+        ul{
+            margin-top: 15%;
+            list-style: none;
+            li{
+                position: relative;
+                margin-bottom: 10%;
+
+                .underline{
+                    position: absolute;
+                    z-index: 100;
+                    left: 0;
+                    bottom: -2%;
+                    width: 2%;
+                    height: 3px;
+                    background-color: grey;
+                    border-radius: 100vh;
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: $black;
+                font-size: 200%;
+
+
+            }
+
+
+        }
+
+    }
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -11%;
+        width: 65%;
+        height: 100%;
+        background-color: rgb(250, 250, 146);
+        z-index: 2;
+        transform: skewX(25deg);
+        border-radius: 93% 7% 100% 0% / 0% 100% 0% 100% ;
+    }
+}
+
+.buildings{
+    position: relative;
+
+    .line-1{
+        position: absolute;
+        width: 100%;
+        height: 13vh;
+        background-color: rgb(250, 175, 175);
+        transform: skewY(3deg) translateY(-46%);
+        z-index: 3;
+    }
+    
+    .building-content{
+        position: relative;
+        height: 65vh;
+        overflow: hidden;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -11%;
+            width: 55%;
+            height: 100%;
+            background-color: rgb(250, 250, 146);
+            z-index: 2;
+            transform: skewX(25deg);
+            border-radius: 100% 0% 84% 16% / 0% 100% 0% 100%  ;
+        }
+
+        .img{
+            position: absolute;
+            width: 85%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in;
+            background: url("../img/nagoya_buildings.jpg") no-repeat;
+            background-size: cover;
+
+            &:hover{
+                filter: blur(4px);
+                transform: scale(1.15);
+            }
+        }
+
+        h2{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            font-size: 6vh;
+            color: white;
+            text-shadow: 2px 2px 6px black;
+            pointer-events: none;
+        }
+    }
+
+    
+}
+
+.foods{
+    position: relative;
+
+    .line-2{
+        position: absolute;
+        width: 100%;
+        height: 13vh;
+        background-color: rgb(250, 175, 175);
+        transform: skewY(-3deg) translateY(-46%);
+        z-index: 3;
+    }
+
+    .food-content{
+        position: relative;
+        height: 65vh;
+        overflow: hidden;
+
+        &::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: -15%;
+            width: 65%;
+            height: 100%;
+            background-color: rgb(250, 250, 146);
+            z-index: 2;
+            transform: skewX(-25deg);
+        }
+
+        .img{
+            width: 85%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: all 0.2s ease-in;
+            background: url("../img/nagoya_foods.jpg") no-repeat;
+            background-size: cover;
+    
+            &:hover{
+                filter: blur(4px);
+                transform: scale(1.15);
+            }
+        }
+
+        h2{
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            font-size: 6vh;
+            color: white;
+            text-shadow: 2px 2px 6px black;
+            pointer-events: none;
+        }
+    }
+}

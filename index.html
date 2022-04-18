@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'omw6qsy',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <!--メモ、幅700pxより下でcssデザインは変える-->
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div class="loading">
+        <div id="loadlogo"><p id="loadmsg">Loading</p></div>
+    </div>
+
+    <main class="container">
+        
+        <header>
+            <div class="img"></div>
+            <h1>ようこそ</h1>
+            <div class="links">
+                <h3>Links...</h3>
+                <ul>
+                    <li><a href="#buildings">名古屋の建物</a><span class="underline"></span></li>
+                    <li><a href="#foods">なごやめし</a><span class="underline"></span></li>
+                    <li><a href="#news">ニュース</a><span class="underline"></span></li>
+                </ul>
+            </div>
+
+        </header>
+
+        <div class="buildings" id="buildings">
+            <div class="line-1"></div>
+            <div class="building-content">
+                <!--<img src="img/nagoya_buildings.jpg">-->
+                <div class="img"></div>
+                <h2>名古屋の建物</h2>
+            </div>
+        </div>
+
+        <div class="foods" id="foods">
+            <div class="line-2"></div>
+            <div class="food-content">
+                <div class="img"></div>
+                <h2>なごやめし</h2>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

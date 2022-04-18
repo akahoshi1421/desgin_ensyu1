@@ -1,0 +1,340 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: a-otf-jun-pro, sans-serif;
+  font-weight: 1000;
+  font-style: normal;
+}
+
+.loading {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fafa92;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 10;
+}
+
+.loading #loadlogo {
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+}
+
+.loading #loadlogo::after, .loading #loadlogo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+  height: 50px;
+  border: black solid 3px;
+  z-index: 2;
+}
+
+.loading #loadlogo::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-animation: rotateanime2 1.5s ease infinite;
+          animation: rotateanime2 1.5s ease infinite;
+}
+
+.loading #loadlogo::before {
+  -webkit-animation: rotateanime1 1.5s ease infinite;
+          animation: rotateanime1 1.5s ease infinite;
+}
+
+.loading #loadlogo #loadmsg {
+  position: absolute;
+  top: 110px;
+  font-weight: bold;
+  text-align: center;
+}
+
+@-webkit-keyframes rotateanime1 {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(2);
+            transform: rotate(180deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes rotateanime1 {
+  0% {
+    -webkit-transform: rotate(0deg) scale(1);
+            transform: rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(180deg) scale(2);
+            transform: rotate(180deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(360deg) scale(1);
+            transform: rotate(360deg) scale(1);
+  }
+}
+
+@-webkit-keyframes rotateanime2 {
+  0% {
+    -webkit-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(225deg) scale(2);
+            transform: rotate(225deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(405deg) scale(1);
+            transform: rotate(405deg) scale(1);
+  }
+}
+
+@keyframes rotateanime2 {
+  0% {
+    -webkit-transform: rotate(45deg) scale(1);
+            transform: rotate(45deg) scale(1);
+  }
+  50% {
+    -webkit-transform: rotate(225deg) scale(2);
+            transform: rotate(225deg) scale(2);
+  }
+  100% {
+    -webkit-transform: rotate(405deg) scale(1);
+            transform: rotate(405deg) scale(1);
+  }
+}
+
+header {
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+}
+
+header .img {
+  position: absolute;
+  width: 75%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: url("../img/nagoya_castle.jpg") no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+header .img:hover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+header h1 {
+  position: absolute;
+  top: 50%;
+  right: 10%;
+  font-size: 8vh;
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  pointer-events: none;
+}
+
+header .links {
+  position: absolute;
+  top: 3%;
+  left: 6%;
+  z-index: 3;
+}
+
+header .links h3 {
+  position: absolute;
+  left: -10%;
+  color: #676464;
+}
+
+header .links ul {
+  margin-top: 15%;
+  list-style: none;
+}
+
+header .links ul li {
+  position: relative;
+  margin-bottom: 10%;
+}
+
+header .links ul li .underline {
+  position: absolute;
+  z-index: 100;
+  left: 0;
+  bottom: -2%;
+  width: 2%;
+  height: 3px;
+  background-color: grey;
+  border-radius: 100vh;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+header .links ul a {
+  text-decoration: none;
+  color: black;
+  font-size: 200%;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -11%;
+  width: 65%;
+  height: 100%;
+  background-color: #fafa92;
+  z-index: 2;
+  -webkit-transform: skewX(25deg);
+          transform: skewX(25deg);
+  border-radius: 93% 7% 100% 0% / 0% 100% 0% 100%;
+}
+
+.buildings {
+  position: relative;
+}
+
+.buildings .line-1 {
+  position: absolute;
+  width: 100%;
+  height: 13vh;
+  background-color: #faafaf;
+  -webkit-transform: skewY(3deg) translateY(-46%);
+          transform: skewY(3deg) translateY(-46%);
+  z-index: 3;
+}
+
+.buildings .building-content {
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.buildings .building-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -11%;
+  width: 55%;
+  height: 100%;
+  background-color: #fafa92;
+  z-index: 2;
+  -webkit-transform: skewX(25deg);
+          transform: skewX(25deg);
+  border-radius: 100% 0% 84% 16% / 0% 100% 0% 100%;
+}
+
+.buildings .building-content .img {
+  position: absolute;
+  width: 85%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: url("../img/nagoya_buildings.jpg") no-repeat;
+  background-size: cover;
+}
+
+.buildings .building-content .img:hover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.buildings .building-content h2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 6vh;
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  pointer-events: none;
+}
+
+.foods {
+  position: relative;
+}
+
+.foods .line-2 {
+  position: absolute;
+  width: 100%;
+  height: 13vh;
+  background-color: #faafaf;
+  -webkit-transform: skewY(-3deg) translateY(-46%);
+          transform: skewY(-3deg) translateY(-46%);
+  z-index: 3;
+}
+
+.foods .food-content {
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.foods .food-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -15%;
+  width: 65%;
+  height: 100%;
+  background-color: #fafa92;
+  z-index: 2;
+  -webkit-transform: skewX(-25deg);
+          transform: skewX(-25deg);
+}
+
+.foods .food-content .img {
+  width: 85%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  background: url("../img/nagoya_foods.jpg") no-repeat;
+  background-size: cover;
+}
+
+.foods .food-content .img:hover {
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+}
+
+.foods .food-content h2 {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  font-size: 6vh;
+  color: white;
+  text-shadow: 2px 2px 6px black;
+  pointer-events: none;
+}
+/*# sourceMappingURL=index.css.map */
