@@ -430,6 +430,7 @@ header::before {
   right: -120%;
   z-index: 100;
   opacity: 0;
+  display: none;
 }
 
 .slide-svg .img-bg {
@@ -443,6 +444,7 @@ header::before {
 }
 
 .slide-svg img.move {
+  display: inline !important;
   -webkit-animation: bgimgmove 1.5s ease 1 forwards;
           animation: bgimgmove 1.5s ease 1 forwards;
 }

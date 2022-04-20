@@ -377,6 +377,7 @@ header{
         right: -120%;
         z-index: 100;
         opacity: 0;
+        display: none;
     }
     .img-bg{
         top: 0;
@@ -389,6 +390,7 @@ header{
     }
 
     img.move{
+        display: inline !important;
         animation: bgimgmove 1.5s ease 1 forwards;
     }
     .img-bg.move{
