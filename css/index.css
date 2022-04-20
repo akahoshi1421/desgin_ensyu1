@@ -427,8 +427,9 @@ header::before {
   height: 126vh;
   position: fixed;
   top: -13%;
-  right: -90%;
+  right: -120%;
   z-index: 100;
+  opacity: 0;
 }
 
 .slide-svg .img-bg {
@@ -455,10 +456,12 @@ header::before {
   0% {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
+    -webkit-transform: translateX(-450%);
+            transform: translateX(-450%);
+    opacity: 1;
   }
 }
 
@@ -466,10 +469,12 @@ header::before {
   0% {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
+    opacity: 1;
   }
   100% {
-    -webkit-transform: translateX(-200%);
-            transform: translateX(-200%);
+    -webkit-transform: translateX(-450%);
+            transform: translateX(-450%);
+    opacity: 1;
   }
 }
 

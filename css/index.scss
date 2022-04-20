@@ -374,8 +374,9 @@ header{
         height: 126vh;
         position: fixed;
         top: -13%;
-        right: -90%;
+        right: -120%;
         z-index: 100;
+        opacity: 0;
     }
     .img-bg{
         top: 0;
@@ -398,9 +399,11 @@ header{
 @keyframes bgimgmove {
     0%{
         transform: translateX(0%);
+        opacity: 1;
     }
     100%{
-        transform: translateX(-200%);
+        transform: translateX(-450%);
+        opacity: 1;
     }
 }
 
