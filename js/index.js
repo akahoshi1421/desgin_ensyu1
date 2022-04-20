@@ -10,7 +10,7 @@ setInterval(()=>{
 }, 400);
 
 $(window).on("load", ()=>{
-    $(".loading").delay(1000).fadeOut(1500);
+    $(".loading").delay(500).fadeOut(1500);
 })
 
 $(document).on("mouseover", ".links li", function(){
@@ -23,4 +23,11 @@ $(document).on("mouseleave", ".links li", function(){
     $(this).find(".underline").css({
         "width": "2%"
     });
+});
+
+$(document).on('click', ".img", function(){
+    $(".imgs img, .imgs .img-bg").addClass("move");
+    setTimeout(()=>{
+        $(".imgs img, .imgs .img-bg").removeClass("move");
+    }, 2600);
 });
