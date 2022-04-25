@@ -31,3 +31,33 @@ $(document).on('click', ".img", function(){
         $(".imgs img, .imgs .img-bg").removeClass("move");
     }, 2600);
 });
+
+const options = {
+    root: document.querySelector(".news-list"),
+    threshold: 0
+}
+
+
+$(window).on("load", function(){
+    const io = new IntersectionObserver(function(entries){
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                $(".news-list").addClass("page-bottom");
+            }       
+            else{
+                $(".news-list").removeClass("page-bottom");
+            }
+        })
+    }, options)
+    
+    io.observe(document.querySelector("#last-news"));
+});
+
+
+//スムーズスクロール
+$(document).on("click", "a[href^='#']", function(){
+    const speed = 300;
+    const href = $($(this).attr("href"));
+    $("body,html").animate({scrollTop:href.offset().top}, speed, "swing");
+    return false;
+});
