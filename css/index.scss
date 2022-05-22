@@ -3,10 +3,13 @@ $black: black;
 *{
     margin: 0;
     padding: 0;
-    font-family: a-otf-jun-pro, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-weight: 1000;
     font-style: normal;
+}
 
+body{
+    background-color: #fff24e;
 }
 
 .loading{
@@ -90,7 +93,7 @@ header{
         width: 75%;
         height: 100%;
         top: 0;
-        right: 0;
+        right: -10vw;
         transition: all 0.2s ease-in;
         background: url("../img/nagoya_castle.jpg") no-repeat;
         background-size: cover;
@@ -106,7 +109,7 @@ header{
         position: absolute;
         top: 50%;
         right: 10%;
-        font-size: 8vh;
+        font-size: unquote("min(4rem, 50px)");
         color: white;
         text-shadow: 2px 2px 6px black;
         pointer-events: none;
@@ -122,6 +125,7 @@ header{
             position: absolute;
             left: -10%;
             color: rgb(103, 100, 100);
+            font-size: 1.5rem;
         }
         ul{
             margin-top: 15%;
@@ -145,7 +149,7 @@ header{
             a{
                 text-decoration: none;
                 color: $black;
-                font-size: 200%;
+                font-size: unquote("min(2.3rem, 30px)");
 
 
             }
@@ -162,7 +166,7 @@ header{
         left: -11%;
         width: 65%;
         height: 100%;
-        background: url("../img/background3.png") no-repeat;
+        background: url("../img/background3.svg") no-repeat;
         background-size: cover;
         background-position: 100%;
         z-index: 2;
@@ -171,6 +175,8 @@ header{
     }
 }
 
+
+
 .buildings{
     position: relative;
 
@@ -178,7 +184,7 @@ header{
         position: absolute;
         width: 100%;
         height: 13vh;
-        background-color: rgb(250, 175, 175);
+        background-color: #5BAD92;
         transform: skewY(3deg) translateY(-46%);
         z-index: 3;
     }
@@ -195,7 +201,7 @@ header{
             right: -11%;
             width: 55%;
             height: 100%;
-            background: url("../img/background2.png") no-repeat;
+            background: url("../img/background2.svg") no-repeat;
             background-size: cover;
             //background-color: rgb(250, 250, 146);
             z-index: 2;
@@ -212,9 +218,10 @@ header{
             transition: all 0.2s ease-in;
             background: url("../img/nagoya_buildings.jpg") no-repeat;
             background-size: cover;
+            filter: saturate(200%);
 
             &:hover{
-                filter: blur(4px);
+                filter: blur(4px) saturate(200%);
                 transform: scale(1.15);
             }
         }
@@ -223,7 +230,7 @@ header{
             position: absolute;
             top: 50%;
             left: 10%;
-            font-size: 6vh;
+            font-size:  unquote("min(4rem, 50px)");
             color: white;
             text-shadow: 2px 2px 6px black;
             pointer-events: none;
@@ -240,7 +247,7 @@ header{
         position: absolute;
         width: 100%;
         height: 13vh;
-        background-color: rgb(250, 175, 175);
+        background-color: #5BAD92;
         transform: skewY(-3deg) translateY(-46%);
         z-index: 3;
     }
@@ -257,7 +264,7 @@ header{
             right: -15%;
             width: 65%;
             height: 100%;
-            background: url("../img/background2.png") no-repeat;
+            background: url("../img/background2.svg") no-repeat;
             background-size: cover;
             z-index: 2;
             transform: skewX(-25deg);
@@ -282,11 +289,41 @@ header{
             position: absolute;
             top: 50%;
             left: 10%;
-            font-size: 6vh;
+            font-size:  unquote("min(4rem, 50px)");
             color: white;
             text-shadow: 2px 2px 6px black;
             pointer-events: none;
         }
+    }
+}
+
+@media screen and(max-width: 730px)  {
+    header{
+        .img{
+            width: 100%;
+            right: 0;
+            background-position: center;
+        }
+
+        &::before{
+            content: "";
+            display: none;
+        }
+    }
+
+    .buildings, .foods{
+        .building-content, .food-content{
+            .img{
+                width: 100%;
+            }
+
+            &::before{
+                content: "";
+                display: none;
+            }
+        }
+
+
     }
 }
 
@@ -297,7 +334,7 @@ header{
         position: absolute;
         width: 100%;
         height: 12vh;
-        background-color: rgb(250, 175, 175);
+        background-color: #5BAD92;
         transform: translateY(-46%);
         z-index: 3;
     }
@@ -305,18 +342,22 @@ header{
     .news-content{
         width: 100%;
         height: 75vh;
-        background: url("../img/background4.png") no-repeat;
-        background-size: cover;
+        //background: url("../img/background4.png") no-repeat;
+        //background-size: cover;
+        background-color: #fff24e;
         
-        h2{
-            position: absolute;
-            top: 14%;
-            left: 50%;
-            font-size: 6vh;
-            color: white;
-            text-shadow: 2px 2px 3px black;
-            transform: translate(-50%);
+        .news-title{
+            text-align: center;
+            h2{
+                position: absolute;
+                top: 14%;
+                left: 50%;
+                width: 85%;
+                font-size: unquote("min(4rem, 50px)");
+                transform: translateX(-50%);
+            }
         }
+
 
         .news-list{
             position: absolute;
@@ -359,6 +400,7 @@ header{
                 a{
                     color: rgb(116, 114, 114);
                     transition: all 0.3s ease-in-out;
+                    font-size: 1.2rem;
                 }
 
                 &::before{
@@ -383,6 +425,10 @@ header{
     }
 }
 
+.img{
+    cursor: pointer;
+}
+
 @keyframes lastnews {
     0%{
         transform: scale(1);
@@ -402,10 +448,11 @@ header{
         height: 126vh;
         position: fixed;
         top: -13%;
-        right: -120%;
+        right: -376vw;
         z-index: 100;
         opacity: 0;
-        display: none;
+        //display: none;
+        transform: translateX(0);
     }
     .img-bg{
         top: 0;
@@ -413,7 +460,7 @@ header{
         height: 100vh;
         position: fixed;
         background-color: rgb(250, 250, 146);
-        width: 300%;
+        //width: 300%;
         z-index: 99;
     }
 
@@ -428,26 +475,22 @@ header{
 
 @keyframes bgimgmove {
     0%{
-        transform: translateX(0%);
+        right: -376vw;
         opacity: 1;
     }
     100%{
-        transform: translateX(-450%);
+        right: 0vw;
         opacity: 1;
     }
 }
 
 @keyframes bgmove {
     0%{
-        transform: translateX(0%);
-        opacity: 1;
-    }
-    70%{
-        transform: translateX(-100%) translateY(0%);
+        transform: translateX(0);
         opacity: 1;
     }
     100%{
-        transform: translateX(-100%) translateY(-100%);
+        transform: translateX(-30%);
         opacity: 1;
     }
 }

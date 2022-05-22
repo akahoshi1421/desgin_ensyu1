@@ -2,21 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ようこそ</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        (function(d) {
-          var config = {
-            kitId: 'omw6qsy',
-            scriptTimeout: 3000,
-            async: true
-          },
-          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-        })(document);
-      </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Sawarabi+Mincho&display=swap" rel="stylesheet">
     <script src="js/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loader.css">
     <!--メモ、幅700pxより下でcssデザインは変える-->
     <script src="js/index.js"></script>
 </head>
@@ -28,7 +21,7 @@
     <main class="container">
         
         <header>
-            <div class="img"></div>
+            <div class="img" where="welcome"></div>
             <h1>ようこそ</h1>
             <div class="links">
                 <h3>Links...</h3>
@@ -45,7 +38,7 @@
             <div class="line-1"></div>
             <div class="building-content">
                 <!--<img src="img/nagoya_buildings.jpg">-->
-                <div class="img"></div>
+                <div class="img" where="building"></div>
                 <h2>名古屋の建物</h2>
             </div>
         </div>
@@ -53,7 +46,7 @@
         <div class="foods" id="foods">
             <div class="line-2"></div>
             <div class="food-content">
-                <div class="img"></div>
+                <div class="img" where="foods"></div>
                 <h2>なごやめし</h2>
             </div>
         </div>
@@ -61,7 +54,10 @@
         <div class="news" id="news">
             <div class="line-3"></div>
             <div class="news-content">
-                <h2>ニュース</h2>
+                <div class="news-title">
+                    <h2>ニュース</h2>
+                </div>
+                
                 <div class="news-list">
                     <div class="one-news">
                         <a href="youtube.com">TESTTESTTESTTEST</a>
@@ -89,11 +85,15 @@
 
     <div class="slide-svg">
         <div class="imgs">
-            <img src="img/Emblem_of_Nagoya,_Aichi.svg" alt="">
-            <div class="img-bg"></div>
+            <img src="img/nagoya-city.svg" alt="">
         </div>
         
     </div>
 
+    <div class="cannotsee">
+        <a href="welcome.html"></a>
+        <a href="building.html"></a>
+        <a href="foods.html"></a>
+    </div>
 </body>
 </html>

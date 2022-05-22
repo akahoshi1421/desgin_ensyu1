@@ -28,8 +28,11 @@ $(document).on("mouseleave", ".links li", function(){
 $(document).on('click', ".img", function(){
     $(".imgs img, .imgs .img-bg").addClass("move");
     setTimeout(()=>{
-        $(".imgs img, .imgs .img-bg").removeClass("move");
-    }, 2600);
+        //$(".imgs img, .imgs .img-bg").removeClass("move");
+        let where = $(this).attr("where");
+        $(`a[href='${where}.html']`)[0].click();
+        
+    }, 1500);
 });
 
 const options = {
